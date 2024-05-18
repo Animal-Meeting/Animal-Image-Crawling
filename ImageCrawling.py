@@ -13,8 +13,8 @@ from selenium.webdriver.support import expected_conditions as EC
 
 def get_image(title, search):
   
-    if not os.path.isdir(search+ "/"):
-        os.makedirs(search + "/")
+    if not os.path.isdir("./image/" + search+ "/"):
+        os.makedirs("./image/" + search + "/")
 
     # Chromedriver 경로 설정
     chrome_driver_path = "./chromedriver"  # 절대 경로로 변경
@@ -70,7 +70,7 @@ def get_image(title, search):
             opener.addheaders = [('User-Agent', 'Mozilla/5.0')]
             urllib.request.install_opener(opener)
             
-            urllib.request.urlretrieve(imgUrl, search +"/" + search + "_" + str(count) + ".jpg")
+            urllib.request.urlretrieve(imgUrl, "./image/" + search +"/" + search + "_" + str(count) + ".jpg")
             print("Image saved: " + title + "_{}.jpg".format(count))
             count += 1
             if count == 100:
