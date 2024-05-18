@@ -86,3 +86,4 @@ search =["블랙핑크 지수 얼굴"]
 
 for i in search:
     get_image(title, i)
+    
